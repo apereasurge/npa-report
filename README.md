@@ -1,4 +1,4 @@
-# NpaReport
+# myApp
 
 This application was generated using JHipster 6.10.5, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v6.10.5](https://www.jhipster.tech/documentation-archive/v6.10.5).
 
@@ -23,8 +23,8 @@ auto-refreshes when files change on your hard drive.
 
 ```
 
+./mvnw
 
-./gradlew -x webpack
 
 npm start
 ```
@@ -76,12 +76,12 @@ For further instructions on how to develop with JHipster, have a look at [Using 
 
 ### Packaging as jar
 
-To build the final jar and optimize the NpaReport application for production, run:
+To build the final jar and optimize the myApp application for production, run:
 
 ```
 
+./mvnw -Pprod clean verify
 
-./gradlew -Pprod clean bootJar
 
 ```
 
@@ -90,12 +90,12 @@ To ensure everything worked, run:
 
 ```
 
+java -jar target/*.jar
 
-java -jar build/libs/*.jar
 
 ```
 
-Then navigate to [http://localhost:8081](http://localhost:8081) in your browser.
+Then navigate to [http://localhost:8080](http://localhost:8080) in your browser.
 
 Refer to [Using JHipster in production][] for more details.
 
@@ -105,8 +105,8 @@ To package your application as a war in order to deploy it to an application ser
 
 ```
 
+./mvnw -Pprod,war clean verify
 
-./gradlew -Pprod -Pwar clean bootWar
 
 ```
 
@@ -115,7 +115,7 @@ To package your application as a war in order to deploy it to an application ser
 To launch your application's tests, run:
 
 ```
-./gradlew test integrationTest jacocoTestReport
+./mvnw verify
 ```
 
 ### Client tests
@@ -136,12 +136,18 @@ Sonar is used to analyse code quality. You can start a local Sonar server (acces
 docker-compose -f src/main/docker/sonar.yml up -d
 ```
 
-You can run a Sonar analysis with using the [sonar-scanner](https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner) or by using the gradle plugin.
+You can run a Sonar analysis with using the [sonar-scanner](https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner) or by using the maven plugin.
 
 Then, run a Sonar analysis:
 
 ```
-./gradlew -Pprod clean check jacocoTestReport sonarqube
+./mvnw -Pprod clean verify sonar:sonar
+```
+
+If you need to re-run the Sonar phase, please be sure to specify at least the `initialize` phase since Sonar properties are loaded from the sonar-project.properties file.
+
+```
+./mvnw initialize sonar:sonar
 ```
 
 For more information, refer to the [Code quality page][].
@@ -166,7 +172,7 @@ You can also fully dockerize your application and all the services that it depen
 To achieve this, first build a docker image of your app by running:
 
 ```
-./gradlew bootJar -Pprod jibDockerBuild
+./mvnw -Pprod verify jib:dockerBuild
 ```
 
 Then run:

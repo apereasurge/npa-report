@@ -1,0 +1,23 @@
+{
+  "myApp": {
+    "npaReport": {
+      "home": {
+        "title": "NpaReports",
+        "createLabel": "Créer un nouveau Npa Report",
+        "createOrEditLabel": "Créer ou éditer un Npa Report",
+        "notFound": "Aucun Npa Report trouvé"
+      },
+      "created": "Un nouveau Npa Report a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Npa Report avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Npa Report avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Npa Report {{ id }} ?"
+      },
+      "detail": {
+        "title": "Npa Report"
+      },
+      "npaId": "Npa Id",
+      "location": "Location"
+    }
+  }
+}
