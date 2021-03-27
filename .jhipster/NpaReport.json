@@ -1,0 +1,25 @@
+{
+  "name": "NpaReport",
+  "fields": [
+    {
+      "fieldName": "npaId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "location",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210327130302",
+  "entityTableName": "npa_report",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["myApp"]
+}

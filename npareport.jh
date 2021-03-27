@@ -12,8 +12,8 @@ application {
 }
 
 entity NpaReport {
-String npaId,
-String location
+ npaId String,
+ location String
 }
 
 
